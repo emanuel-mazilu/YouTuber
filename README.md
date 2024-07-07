@@ -70,26 +70,6 @@ Apoi, puteți face cereri POST la `http://localhost:8000/generate_video` cu un p
 }
 ```
 
-## Structura Proiectului
-
-youtuber/
-├── api/
-│   └── routes.py
-├── cli/
-│   └── main.py
-├── youtuber/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── script_generator.py
-│   ├── image_generator.py
-│   ├── audio_generator.py
-│   ├── video_creator.py
-│   └── uploader.py
-├── .env
-├── requirements.txt
-└── README.md
-
-
 ## Contribuții
 Contribuțiile sunt binevenite! Vă rugăm să deschideți un issue sau să creați un pull request pentru orice îmbunătățiri.
 
