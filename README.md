@@ -68,6 +68,7 @@ Apoi, puteți face cereri POST la `http://localhost:8000/generate_video` cu un p
   "text_model": "gpt4",
   "image_model": "sd3"
 }
+```
 
 ## Structura Proiectului
 
