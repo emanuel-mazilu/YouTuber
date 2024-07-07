@@ -20,7 +20,7 @@ YouTuber este o aplicație Python care generează automat videoclipuri și le î
 ## Instalare
 
 1. Clonați repository-ul:
-git clone https://github.com/your-username/youtuber.git
+git clone [https://github.com/emanuel-mazilu/youtuber.git](https://github.com/emanuel-mazilu/YouTuber.git)
 cd youtuber
 
 2. Creați și activați un mediu virtual:
