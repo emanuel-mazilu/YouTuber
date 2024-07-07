@@ -5,7 +5,6 @@ from .audio_generator import AudioGenerator
 from .video_creator import VideoCreator
 from .uploader import YouTubeUploader
 import asyncio
-import time
 
 class VideoGenerator:
     def __init__(self):

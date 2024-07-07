@@ -13,13 +13,17 @@ class ScriptGenerator:
 
     async def generate_script(self, prompt: str, length: float, model: str) -> str:
         system_prompt = self._prepare_system_prompt(prompt, length)
+        response_data = None
 
         if model == "claude":
             response_data = self._generate_with_claude(system_prompt)
         elif model == "gpt4":
             response_data = self._generate_with_gpt4(system_prompt)
-        else:
+        elif model == "llama":
             response_data = self._generate_with_llama(system_prompt)
+
+        if response_data == None:
+            return ""
 
         title = response_data.get("title", "")
         subject = self._create_subject_identifier(title)

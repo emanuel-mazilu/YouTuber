@@ -1,8 +1,7 @@
 import aiohttp
-from aiohttp import FormData, MultipartWriter
+from aiohttp import MultipartWriter
 import asyncio
 import os
-import base64
 from typing import Literal
 import json
 from .config import Config
@@ -22,8 +21,6 @@ class ImageGenerator:
         for i, prompt in enumerate(image_prompts):
             if image_model == "dall-e-3":
                 tasks.append(self._generate_image_dall_e(prompt, subject, image_size, i))
-            elif image_model == "sd":
-                tasks.append(self._generate_image_sd(prompt, subject, image_size, i))
             elif image_model == "sd3":
                 tasks.append(self._generate_image_sd3(prompt, subject, image_size, i))
 

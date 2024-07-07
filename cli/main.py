@@ -3,13 +3,13 @@ from youtuber import VideoGenerator
 import asyncio
 import sys
 
+
 @click.command()
 @click.option('--prompt', required=True, help='Prompt for video generation')
 @click.option('--length', default=1, type=int, help='Length of the video in minutes')
 @click.option('--text-model', default='claude', help='Text model to use')
 @click.option('--image-model', default='sd3', help='Image model to use')
 @click.option('--verbose', is_flag=True, help='Enable verbose output')
-
 def generate_video_cli(prompt, length, text_model, image_model, verbose):
     video_generator = VideoGenerator()
 
@@ -27,6 +27,7 @@ def generate_video_cli(prompt, length, text_model, image_model, verbose):
             sys.exit(1)
 
     asyncio.run(run_with_progress())
+
 
 if __name__ == '__main__':
     generate_video_cli()

@@ -5,11 +5,13 @@ from youtuber import VideoGenerator
 app = FastAPI()
 video_generator = VideoGenerator()
 
+
 class VideoRequest(BaseModel):
     prompt: str
     length: int
     text_model: str = "claude"
     image_model: str = "sd3"
+
 
 @app.post("/generate_video")
 async def generate_video_api(request: VideoRequest):

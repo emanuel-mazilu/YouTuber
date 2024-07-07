@@ -1,12 +1,14 @@
 import json
 import os
 import glob
-from moviepy.editor import AudioFileClip, CompositeAudioClip, CompositeVideoClip, ImageClip, TextClip, concatenate_videoclips
+from moviepy.editor import AudioFileClip, CompositeAudioClip, CompositeVideoClip, ImageClip, TextClip, \
+    concatenate_videoclips
 from natsort import natsorted
 from pydub import AudioSegment, effects
 from .utils import wrap_text
 from PIL import Image
 import numpy as np
+
 
 class VideoCreator:
     def __init__(self, config):
@@ -48,7 +50,7 @@ class VideoCreator:
         background_music = AudioSegment.from_mp3(self.config.SOUNDTRACK_PATH)
         background_music = effects.normalize(background_music)
         background_music = background_music - 20
-        background_music = background_music[5*1000:(voiceover.duration+5)*1000]
+        background_music = background_music[5 * 1000:(voiceover.duration + 5) * 1000]
         background_music = background_music.fade_in(2000).fade_out(2000)
         background_music_path = self.config.SOUNDTRACK_EDITED_PATH
         background_music.export(background_music_path, format="mp3")
@@ -71,7 +73,7 @@ class VideoCreator:
             lines = wrapped_text.split("\n")
             num_clips = (len(lines) + max_lines_per_clip - 1) // max_lines_per_clip
 
-            audio_file = f"./output/{subject}/voices/{'edited/' if length <= 1 else ''}{i+1}_silenced.mp3"
+            audio_file = f"./output/{subject}/voices/{'edited/' if length <= 1 else ''}{i + 1}_silenced.mp3"
             audio_duration = AudioSegment.from_mp3(audio_file).duration_seconds
             clip_duration = audio_duration / num_clips
 

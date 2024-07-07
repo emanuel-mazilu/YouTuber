@@ -6,6 +6,7 @@ from pydub import AudioSegment
 from pydub.silence import split_on_silence
 from .config import Config
 
+
 class AudioGenerator:
     def __init__(self, config: Config):
         self.config = config
@@ -37,7 +38,7 @@ class AudioGenerator:
         )
         os.makedirs(f"./output/{subject}/voices", exist_ok=True)
 
-        save(audio, f"./output/{subject}/voices/{iteration+1}.mp3")
+        save(audio, f"./output/{subject}/voices/{iteration + 1}.mp3")
 
     def _silence_audio(self, subject: str):
         input_folder = f"./output/{subject}/voices"
