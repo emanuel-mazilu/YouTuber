@@ -1,0 +1,5 @@
+.env
+.venv/
+output/
+final_videos/
+*egg-info/
